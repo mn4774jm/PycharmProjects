@@ -59,20 +59,24 @@ def input1():
     # Condition assigned as true and loop start
     game_is_playing = True
     while game_is_playing is True:
+        #lists player name from player list using player turn as index
         score = input(f'Enter score for {player_list[player_turn]}\'s turn: ')
         # Conditionals for dictionary and regular play
         if score == '?':
             dictionary_mode()
+        #if player hits enter w/o entering information, else triggers and game ends
         elif score != '':
             # Validation for score input
             while score.isnumeric() is False or int(score) < 0:
                 score = input('\tPlease enter a whole number: ')
             score = int(score)
             # use setdefault to assign a key and empty list to dictionary/append score to dictionary for each player
-            # assign variable to temp hold list and print after each play/conditional to maintain game flow
+            #player list is used as the key for the dictionary
             player_dict.setdefault(f'{player_list[player_turn]}', []).append(score)
+            # assign variable to temp hold list and print after each play/conditional to maintain game flow
             run_score = player_dict[player_list[player_turn]]
             print(run_score)
+            #Check player turn number. if not last players turn in list, advance counter. Else, return counter to 0
             if f'{player_list[player_turn]}' != f'{player_list[-1]}':
                 player_turn += 1
             else:
@@ -91,35 +95,55 @@ def getPosint():
     posInt = int(posInt)
     return posInt
 
-# Asks for user input and searches txt document for match using input as the pattern
+# Asks for user input and searches txt document for match using input as the pattern.
+# Also validates for at least two letters.
+
 def dictionary_mode():
+    #open dixtionary txt file
     start = open('scrabblewords.txt', 'r')
+    #start read mode and store txt info in a variable for use later
     scrabble_words = start.read()
+    #print header
     print(f'\n{"-"*25} Dictionary {"-"*26}\n')
-    shade = input('Enter word you would like to check: ').upper()
-    word_regex = re.compile(f'{shade}')
+    #Ask user for word to check
+    word_to_Check = input('Enter word you would like to check: ').upper()
+    #Condition to ensure that at least two letter are entered
+    while len(word_to_Check) < 2:
+        #Changed to .upper to match txt doc
+        word_to_check = input('Please enter a word that is at least two letters long: ').upper()
+    #compile regex using user entered word as perameter, store in variable
+    word_regex = re.compile(f'{word_to_Check}')
+    #mo stores word if found during search, otherwise stores None
     mo = word_regex.search(scrabble_words)
-    shade_fixed = shade.title()
+    #Change user word to title case to make it pretty for the user
+    word_fixed = word_to_Check.title()
+    # Conditional block. If pattern was not found, returns None. else word is valid
     if mo == None:
-        print(f'Oops... Looks like {shade_fixed} isn\'t a word.\n')
+        print(f'Oops... Looks like {word_fixed} isn\'t a word.\n')
     else:
-        print(f'Congrats, {shade_fixed} is indeed a word.\n')
+        print(f'Congrats, {word_fixed} is indeed a word.\n')
+        #Close txt file
         start.close()
     return
+
 # Collects sum and max value from from player_dict and stores them by player name in new dictionaries
 # Could be improved if player_dict nested in a new dictionary using dict_final and dict_max as keys.
+
 def processing1(player_list, player_dict):
     dict_final = {}
     dict_max = {}
+    #Loop to store player list in new variable; sum totals and append to new dictionary
     for i in range(len(player_list)):
         score = player_dict[player_list[i]]
         sum_score = sum(score)
         dict_final.update({player_list[i]:sum_score})
+    #Loop to store player list for max play, add to dictionary for max score
     for i in range(len(player_list)):
         score = player_dict[player_list[i]]
         sum_score = max(score)
         dict_max.update({player_list[i]: sum_score})
     return dict_final, dict_max
+
 # Player output including score list, max value play, and player totals
 def output1(player_list, player_dict, dict_final, dict_max):
     print(f'\n{"-"*20} Final Tally! {"-"*20}')
