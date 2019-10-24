@@ -1,6 +1,7 @@
 '''Requires scrabblewords.txt in the same folder as this program and an internet connection to run correctly'''
 
 import webbrowser, re
+
 print(f'\n{"-"*10} Welcome to the Scrabble Calculator v0.06 {"-"*10}\n')
 def main():
     try:
@@ -68,7 +69,9 @@ def input1():
         elif score != '':
             # Validation for score input
             while score.isnumeric() is False or int(score) < 0:
-                score = input('\tPlease enter a whole number: ')
+                score = input('\tPlease enter a whole number or "?" to access the dictionary: ')
+                if score == "?":
+                    dictionary_mode()
             score = int(score)
             # use setdefault to assign a key and empty list to dictionary/append score to dictionary for each player
             #player list is used as the key for the dictionary
