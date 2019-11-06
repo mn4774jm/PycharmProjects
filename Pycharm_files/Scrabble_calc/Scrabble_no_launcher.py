@@ -75,6 +75,7 @@ def input1():
             score = int(score)
             # use setdefault to assign a key and empty list to dictionary/append score to dictionary for each player
             #player list is used as the key for the dictionary
+            #player turn working as the index
             player_dict.setdefault(f'{player_list[player_turn]}', []).append(score)
             # assign variable to temp hold list and print after each play/conditional to maintain game flow
             run_score = player_dict[player_list[player_turn]]
