@@ -256,3 +256,17 @@ Combining re.IGNORECASE, re.DOTALL, and re.VERBOSE
 Can all be used at once but only with a pipe character'''
 
 # someRegexValue = re.compile('foo', re.IGNORECASE | re.DOTALL | re.VERBOSE)
+
+
+
+counter = 0
+answer = input('What is the capital of wisconson? ')
+while answer != 'Madison':
+    counter += 1
+    if counter >= 3:
+        print("Sorry, you have used all of your turns")
+        break
+    else:
+        answer = input('Sorry, try again: ')
+if answer == 'Madison' and counter < 3:
+    print(f'Correct! You used {counter+1} out of three chances!')

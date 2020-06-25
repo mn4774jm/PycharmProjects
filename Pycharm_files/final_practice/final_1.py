@@ -73,5 +73,6 @@ def output1(number, num_added, num_add, num_mult, num_sort):
     print('{:.<0}{:.>14}'.format('Your maximum digit is', str(num_added[2])))
 
 
+
 main()
 

@@ -6,6 +6,7 @@ Final1.py
 5/9/19
 '''
 #Define main
+import pyinputplus as pyip
 def main():
     #Exception handling
     while True:
@@ -19,7 +20,8 @@ def main():
         answer = input('Would you like to run this program again? Enter Y or N: ')
         while answer.upper() != 'Y' and answer.upper() != 'N':
             answer = input('Please enter Y or N: ')
-        if answer.upper() == 'N':
+
+        if answer.upper() == 'NO':
             print(f'\nThank for using the program')
             break
 

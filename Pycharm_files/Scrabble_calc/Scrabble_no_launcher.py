@@ -92,8 +92,8 @@ def input1():
 
 # Validation for number of players. May be overkill. consider removing and using simple validation for player_numb
 def getPosint():
-    posInt = input('\nHow many players?: ')
-    print()
+    posInt = input('\nHow many players?: \n')
+    # print()
     while posInt.isnumeric() is False or int(posInt) < 2:
         posInt = input('\tPlease enter a whole number between 2 and 4 players: ')
     posInt = int(posInt)
