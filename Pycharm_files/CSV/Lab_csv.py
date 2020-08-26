@@ -10,12 +10,26 @@ outputFile = open('csv_lab.csv', 'w', newline='')
 #Create the writer object
 outputWriter = csv.writer(outputFile)
 #Create rows and columns using commas for column seperation
-(outputWriter.writerow(['Class', 'Day', 'Time', 'Location']))
-(outputWriter.writerow(['Data Comm.', 'M/W', '9:45 - 12 PM', 'T\\3080']))
-(outputWriter.writerow(['Windows', 'M', '12:45 PM - 3:15 PM', 'T\\3050']))
-(outputWriter.writerow(['IT Prep', 'T', '10:10 AM - 12:15 PM' , 'T\\3030']))
-(outputWriter.writerow(['Programming', 'Th', '12:00 PM - 3:00 PM', 'T\\3010']))
-(outputWriter.writerow(['Hard Knocks', 'Every', 'All', 'The Streets']))
+# (outputWriter.writerow(['Class', 'Day', 'Time', 'Location']))
+# (outputWriter.writerow(['Data Comm.', 'M/W', '9:45 - 12 PM', 'T\\3080']))
+# (outputWriter.writerow(['Windows', 'M', '12:45 PM - 3:15 PM', 'T\\3050']))
+# (outputWriter.writerow(['IT Prep', 'T', '10:10 AM - 12:15 PM' , 'T\\3030']))
+# (outputWriter.writerow(['Programming', 'Th', '12:00 PM - 3:00 PM', 'T\\3010']))
+# (outputWriter.writerow(['Hard Knocks', 'Every', 'All', 'The Streets']))
+
+# initialize header and user data lists
+header_list = ['first name', 'last name', 'phone number', 'email']
+user_data = []
+
+# Loop to ask for each item listed in header
+for i in range(len(header_list)):
+    user_input = input(f'What is your {header_list[i]}? ')
+    user_data.append(user_input)
+
+
+outputWriter.writerow(header_list)
+outputWriter.writerow(user_data)
+
 #Close File
 outputFile.close()
 

@@ -1,24 +1,28 @@
-def float_regex():
-    import re
-    floatRegex = re.compile(r'^[+|-]?\d+[.]?(\d+)?$')
-    regex = input('Enter a numeric value: ')
+import re
+def float_regex(message):
+    floatRegex = re.compile(r'^[+|-]?\d+[.]?\d+?$')
+    regex = input(message)
     regex = regex.strip().replace(',', '')
     mo = floatRegex.search(regex)
     while mo == None:
-        regex = input('Enter only numeric values: ')
-        regex = regex.strip().replace(',', '')
+        regex = input('Enter only numeric values: ').strip().replace(',', '')
         mo = floatRegex.search(regex)
-    if regex.isnumeric() is True:
+    if regex.isnumeric():
         regex = int(regex)
     else:
-        regex = float(regex)
-        regex = round(regex)
+        regex = round(float(regex), 2)
     return regex
 
 #Example of how to use
 
-# print('How many gallons of gas did you use? ')
-# gas_used = float_regex()
-# print(gas_used)
-
+gas_used = float_regex(message="How many gallons of gas did you use?:")
+print(f'{gas_used} gallons')
+#
+#
+#
+# # import re
+# #
+# # word = re.compile(r'\Acat', re.I)
+# # result = bool(word.search('Concatinate'))
+# # print(result)
 

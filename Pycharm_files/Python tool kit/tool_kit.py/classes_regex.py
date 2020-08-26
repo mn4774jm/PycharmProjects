@@ -1,3 +1,4 @@
+import re
 phoneRegex = re.compile(r'(\d{3})\.?-?(\d{3}\.?-?\d{4})')  # Regex for phone number
 emailRegex = re.compile(r'\w+@\w+\.\w{2,}')
 

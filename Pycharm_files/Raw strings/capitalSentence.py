@@ -63,7 +63,7 @@ def processing1(sentences):
 def output1(capital_sentences):
     print('Here are your sentences: ')
 
-    #Enumerate function used to add count in front of each item
+    # Enumerate function used to add count in front of each item
     # for count, index in enumerate(capital_sentences, 1):
     #     print(f'{count}.', index)
 
