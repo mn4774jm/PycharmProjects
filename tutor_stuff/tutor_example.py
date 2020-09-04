@@ -70,3 +70,4 @@ def outputs(word, length, num_length, number):
 
 
 main()
+
