@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/1150" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone/hello_python_unittest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone/issue_mover/issue_mover" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone/reading_list_project/readinglist" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone/student_list_lab/hello_python_unittest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Capstone/unit_testing_lab" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/camelCase_branching" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/camel_branching" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/guess_the_number" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/guess_the_number2/guess_the_number" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/hello_git" vcs="Git" />
+  </component>
+</project>

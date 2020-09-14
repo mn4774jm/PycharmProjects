@@ -35,39 +35,42 @@
 # basic MIPO (Main, Input, Processing, Output) template
 
 
-def main():
-    # this is exception handling; if the program does something
-    # unexpected, error-wise, this stops the program from crashing
-    try:
-        # this is where you group your function calls and returned values
-        word, number = inputs()
-        word_length, num_length = processing(word, number)
-        outputs(word, word_length, num_length, number)
-    # end of exception handling
-    except Exception as err:
-        print(err)
+# def main():
+#     # this is exception handling; if the program does something
+#     # unexpected, error-wise, this stops the program from crashing
+#     try:
+#         # this is where you group your function calls and returned values
+#         word, number = inputs()
+#         word_length, num_length = processing(word, number)
+#         outputs(word, word_length, num_length, number)
+#     # end of exception handling
+#     except Exception as err:
+#         print(err)
+#
+#
+# def inputs():
+#     word = input('Write a word, please: ').strip()
+#     while word.isnumeric() or word == '':
+#         word = input('Please try again. Only letters will be accepted: ')
+#     number = input('Now enter a number(s): ')
+#     while not number.isnumeric():
+#         number = input('Almost! Try numbers though: ')
+#     return word, number
+#
+#
+# def processing(word, number):
+#     word_length = len(word)
+#     num_length = len(number)
+#     return word_length, num_length
+#
+#
+# def outputs(word, length, num_length, number):
+#     print(f'You decided to enter {word}. It is {length} characters long.')
+#     print(f'You also chose to enter the number {number}. It is {num_length} digits long')
+#
+#
+# main()
 
 
-def inputs():
-    word = input('Write a word, please: ').strip()
-    while word.isnumeric() or word == '':
-        word = input('Please try again. Only letters will be accepted: ')
-    number = input('Now enter a number(s): ')
-    while not number.isnumeric():
-        number = input('Almost! Try numbers though: ')
-    return word, number
 
-
-def processing(word, number):
-    word_length = len(word)
-    num_length = len(number)
-    return word_length, num_length
-
-
-def outputs(word, length, num_length, number):
-    print(f'You decided to enter {word}. It is {length} characters long.')
-    print(f'You also chose to enter the number {number}. It is {num_length} digits long')
-
-
-main()
 
